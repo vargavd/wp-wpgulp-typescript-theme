@@ -7,11 +7,6 @@
  * @package ST_Base_Theme
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
-}
-
 if ( ! function_exists( 'stbase_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -21,17 +16,6 @@ if ( ! function_exists( 'stbase_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function stbase_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on ST Base Theme, use a find and replace
-		 * to change 'stbase' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'stbase', get_template_directory() . '/languages' );
-
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -71,21 +55,6 @@ if ( ! function_exists( 'stbase_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'stbase_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
 		/**
 		 * Add support for core custom logo.
 		 *
@@ -103,18 +72,6 @@ if ( ! function_exists( 'stbase_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'stbase_setup' );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function stbase_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'stbase_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'stbase_content_width', 0 );
 
 /**
  * Register widget area.
@@ -140,14 +97,7 @@ add_action( 'widgets_init', 'stbase_widgets_init' );
  * Enqueue scripts and styles.
  */
 function stbase_scripts() {
-	wp_enqueue_style( 'stbase-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'stbase-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'stbase-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	wp_enqueue_style( 'stbase-style', get_stylesheet_uri(), array() );
 }
 add_action( 'wp_enqueue_scripts', 'stbase_scripts' );
 
