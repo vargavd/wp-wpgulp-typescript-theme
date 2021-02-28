@@ -1,0 +1,7 @@
+MUST HAVE:
+- MENUBAR AND MENU (responsive and mobile - slide from right)
+- HERO TEMPLATE
+- BLOCKS
+
+OPTIONAL:
+- MEGA MENU?
