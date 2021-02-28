@@ -1,8 +1,9 @@
-MUST HAVE:
+Some idea how to extend this base theme:
 - useful CSS variable, funcs
 - MENUBAR AND MENU (responsive and mobile - slide from right)
 - HERO TEMPLATE
 - BLOCKS
 
 OPTIONAL:
+- remove the original wpgulp js file handling 
 - MEGA MENU?

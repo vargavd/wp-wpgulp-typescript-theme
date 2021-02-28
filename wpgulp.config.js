@@ -84,6 +84,16 @@ const zipName = 'file.zip';
 const zipDestination = './../'; // Default: Parent folder.
 const zipIncludeGlob = ['./**/*']; // Default: Include all files/folders in current directory.
 
+
+/* TypeScript options. */
+
+// Directory for TS files.
+const tsFilesDir = './assets/ts/';
+
+// Path to all TS files.
+const watchTsFiles = './assets/ts/**/*.ts';
+
+
 // Default ignored files and folders for the zip file.
 const zipIgnoreGlob = [
     '!./{node_modules,node_modules/**/*}',
@@ -105,7 +115,8 @@ const zipIgnoreGlob = [
     `!${imgSRC}`,
     `!${styleSRC}`,
     `!${jsCustomSRC}`,
-    `!${jsVendorSRC}`
+    `!${jsVendorSRC}`,
+    `!${watchTsFiles}`
 ];
 
 // >>>>> Translation options.
@@ -168,5 +179,7 @@ module.exports = {
     bugReport,
     lastTranslator,
     team,
-    BROWSERS_LIST
+    BROWSERS_LIST,
+    tsFilesDir,
+    watchTsFiles
 };

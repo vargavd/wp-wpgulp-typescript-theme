@@ -6,8 +6,8 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@babel/core": "^7.0.0",
-		"@babel/register": "^7.0.0",
 		"@babel/preset-env": "^7.12.1",
+		"@babel/register": "^7.0.0",
 		"beepbeep": "^1.2.2",
 		"browser-sync": "^2.11.1",
 		"eslint": "^7.12.0",
@@ -29,10 +29,12 @@
 		"gulp-sass": "^4.0.1",
 		"gulp-sort": "^2.0.0",
 		"gulp-sourcemaps": "^3.0.0",
+		"gulp-typescript": "^6.0.0-alpha.1",
 		"gulp-uglify": "^3.0.0",
 		"gulp-uglifycss": "^1.0.6",
 		"gulp-wp-pot": "^2.0.7",
-		"gulp-zip": "^5.0.2"
+		"gulp-zip": "^5.0.2",
+		"typescript": "^4.2.2"
 	},
 	"scripts": {
 		"start": "gulp",

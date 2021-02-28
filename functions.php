@@ -98,6 +98,12 @@ add_action( 'widgets_init', 'stbase_widgets_init' );
  */
 function stbase_scripts() {
 	wp_enqueue_style( 'stbase-style', get_stylesheet_uri(), array() );
+	
+    // test js files (compiled from typescript)
+    wp_enqueue_script( 'stbase-helper-class', get_stylesheet_directory_uri() . "/assets/ts/util/helperClass.js", array(), NULL, true );
+    wp_enqueue_script( 'stbase-sample-class-1', get_stylesheet_directory_uri() . "/assets/ts/dir1/sample-class.js", array(), NULL, true );
+    wp_enqueue_script( 'stbase-sample-class-2', get_stylesheet_directory_uri() . "/assets/ts/dir2/sample-class.js", array(), NULL, true );
+    wp_enqueue_script( 'stbase-main', get_stylesheet_directory_uri() . "/assets/ts/main.js", array(), NULL, true );
 }
 add_action( 'wp_enqueue_scripts', 'stbase_scripts' );
 
