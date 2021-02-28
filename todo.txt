@@ -1,4 +1,5 @@
 MUST HAVE:
+- useful CSS variable, funcs
 - MENUBAR AND MENU (responsive and mobile - slide from right)
 - HERO TEMPLATE
 - BLOCKS
